@@ -1,0 +1,53 @@
+<?php include_once('header.php'); ?>
+
+<title>Yeni Üye Ekle</title>
+<link href='<?php echo base_url()?>css?family=Marcellus' rel='stylesheet' type='text/css'>
+<link href="<?php echo base_url()?>css/styles.css" rel="stylesheet" type="text/css">
+<link rel="stylesheet" href="css/styles.css" />
+
+<div id="memdiv2">
+
+<?php echo form_open('AddMember'); ?>
+<?php if (isset($message)) { ?>
+<CENTER><h3 style="color:green;">Data inserted successfully</h3></CENTER><br>
+<?php } ?>
+<h1>Yeni Ãœye Ekle</h1>
+<?php echo form_label('TC :'); ?>
+<?php echo form_input(array('id' => 'dtc', 'name' => 'dtc')); ?>
+<?php echo form_label('Ad :'); ?>
+<?php echo form_error('dname'); ?>
+<?php echo form_input(array('id' => 'dname', 'name' => 'dname')); ?>
+<?php echo form_label('Soyad :'); ?>
+<?php echo form_error('dsurname'); ?>
+<?php echo form_input(array('id' => 'dsurname', 'name' => 'dsurname')); ?>
+<?php echo form_label('Telefon :'); ?>
+<?php echo form_input(array('id' => 'dphone', 'name' => 'dphone')); ?>
+<?php echo form_label('Email :'); ?>
+<?php echo form_input(array('id' => 'dmail', 'name' => 'dmail')); ?>
+<?php echo form_label('Boy :'); ?>
+<?php echo form_input(array('id' => 'dheigth', 'name' => 'dheigth')); ?>
+<?php echo form_label('Kilo :'); ?>
+<?php echo form_input(array('id' => 'dweigth', 'name' => 'dweigth')); ?>
+<?php echo form_label('Ayak Numarasý :'); ?>
+<?php echo form_input(array('id' => 'dfoot', 'name' => 'dfoot')); ?>
+<?php echo form_label('Cinsiyet :'); ?>
+<select name="dgender" id="dgender">
+<option value="Erkek">Erkek</option>
+<option value="Bayan">Bayan</option>
+</select>
+<?php echo form_label('Adres :'); ?>
+<?php echo form_textarea(array('id' => 'daddress', 'name' => 'daddress')); ?>
+<?php echo form_label('Paket AdÄ±:'); ?>
+<select name="dproduct" id="dproduct">
+<?php foreach($products as $product):?>
+    <option value="<?php echo $product->ID?>"><?php echo $product->PRODUCTNAME; echo '  '.$product->PRICE . 'TL';?></option>
+<?php endforeach;?>
+</select>
+<?php echo form_label('Meslek :'); ?>
+<?php echo form_input(array('id' => 'djob', 'name' => 'djob')); ?>
+<?php echo form_label('Ödenen Ücret :'); ?>
+<?php echo form_input(array('id' => 'dprice', 'name' => 'dprice')); ?>
+<?php echo form_submit(array('id' => 'submit', 'value' => 'Kaydet')); ?>
+<?php echo form_close(); ?>
+</div>
+<?php include_once('footer.php'); ?>

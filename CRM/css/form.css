@@ -1,0 +1,26 @@
+#container{
+width:800px;
+height:610px;
+margin:50px auto
+}
+h1{
+text-align:center;
+font-size:30px;
+color:white;
+padding-bottom: 10px;
+}
+#tit{
+ color:black;
+ font-weight: bold;
+}
+#membertable{
+  background-color: white;
+  text-align:center;
+  
+}
+table, th, td {
+    border:1px solid #000000;
+    background:linear-gradient(#CCCCFF,#CCCCFF);
+    font-family:'Marcellus',serif;
+    
+}
